@@ -12,5 +12,5 @@
  *
  
  
- *// custome bootstrap variables must be set or improted *before* bootstrap.
- @import "bootstrap";
+ */
+ @import 'bootstrap';

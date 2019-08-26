@@ -4,18 +4,18 @@
   <br/><br/>
   <p><%= @place.description %></p>
 
-
-
-
-  </head>
-  <body>
-  <div id="map"></div>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      height: 300px;
+    }
   
 <% if @place.latitude.present? && @place.longitude.present? %>  
-
   <script>
-
-    function initMap() {
+ function initMap() {
       var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
       var map = new google.maps.Map(document.getElementById('map'), {
@@ -32,12 +32,13 @@
   </script>
 
   <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN0cjgFq889Io_UgNfKopX8MNb-bR9vHM=initMap">
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXTliaFQIzNDtTOus6GK-AmO_UsNPKtuk=initMap">
   </script>
 
   <div id="map"></div>
-<% end %>
 
+  <% end %>
+ 
 <br />
 
   <div class="float-right">

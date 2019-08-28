@@ -19,7 +19,10 @@ class PlacesController < ApplicationController
 
 
   def show
-    @place = current_user.places.create(place_params)
+    @place = Place.find(params[:id])
+    @comment = Comment.new
+  end
+
     if @place.valid?
       redirect_to root_path
     else
@@ -63,8 +66,11 @@ class PlacesController < ApplicationController
 
   private
 
-  def place_params
-    params.reqiored(:place).permit(:name, :description, :address)
-  end
-      
+    def place_params
+      params.require(:place).permit(:name, :description, :address)
+    end
+
 end
+
+
+

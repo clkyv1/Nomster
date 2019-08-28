@@ -16,7 +16,7 @@ class PlacesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
+
 
   def show
     @place = current_user.places.create(place_params)
@@ -64,7 +64,7 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.required(:place).permit(:name, :description, :address)
+    params.reqiored(:place).permit(:name, :description, :address)
   end
       
 end

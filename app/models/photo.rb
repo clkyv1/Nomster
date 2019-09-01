@@ -1,4 +1,4 @@
-class Photo < ApplicationRecord::Base
+class Photo < ActiveRecord::Base
   mount_uploader :picture, PictureUploader
   
 end

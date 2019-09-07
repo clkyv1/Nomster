@@ -4,14 +4,7 @@
   <br/><br/>
   <p><%= @place.description %></p>
 
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    #map {
-      height: 300px;
-    }
+
   
 <% if @place.latitude.present? && @place.longitude.present? %>  
   <script>

@@ -7,6 +7,20 @@
 
   
 <% if @place.latitude.present? && @place.longitude.present? %>  
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  
+
+  </style>
+  
+  
+
+
   <script>
  function initMap() {
       var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
@@ -77,9 +91,8 @@
     </div>
 </div>
 
-<div class="col-10 offset-1">
-  <h1 class="float-left">Comments</h1>
-  <br />
+<div class="col-10 offset-0">
+  <h1>Comments</h1>
   <div class="row">
     <% @place.comments.each do |comment| %>
        <div class="col-12 col-sm-5">
@@ -99,22 +112,13 @@
 
 
 
-<div class="clear"></div>
-<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-  <%= f.input :caption %>
-  <%= f.input :picture %>
-  <%= f.submit "Add a photo", class: 'btn btn-primary' %>
-<% end %>
-
-
-
-
 <!-- Button trigger modal -->
 <div class="col-10 offset-1">
   <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal1">
     Add a photo
   </button>
 </div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
@@ -144,7 +148,6 @@
     </div>
 </div>
   
-</div>
 
 <div class="clear"></div>
 

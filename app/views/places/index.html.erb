@@ -3,7 +3,7 @@
     <h1><%= link_to place.name, place_path(place) %></h1><br />
     <i><%= place.address %></i><br /><br />
     <p><%= place.description %></p><br />
-    
+
 
     <% if place.user.present? %>
       <small><%= place.user.email %></small>
@@ -18,7 +18,30 @@
         <%= place.comments.last.message %>
         <small><%= place.comments.last.user.email %></small>
       </blockquote>
+
     </div>
-   <% end %>
+    <% end %>
+
 </div>
-<% end %>
+  <% end %>
+
+<div class="clear"></div>
+
+
+<div class="col-10 offset-1">
+  <h1>Photos</h1>
+  <div class="row">
+    <% @place.photos.each do |photo| %>
+    <div class="col-12 col-sm-4">
+    <blockquote>
+        <b><%= photo.caption %></b>
+        <%= photo.caption %>
+        <%= image_tag photo.picture.to_s  %>
+        <small><%= photo.user.email %></small>
+    </blockquote>
+  </div>
+  <% end %>
+</div>
+</div>
+
+  
